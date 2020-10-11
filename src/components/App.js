@@ -1,9 +1,12 @@
-import React from "react";
-import { Router } from "react-router-dom/cjs/react-router-dom.min";
-import AppRouter from "./Router";
+import React, { useState } from "react";
+import AppRouter from "components/Router";
+import { firebaseAuth } from "firebase";
 
 const App = () => {
-  return <AppRouter />;
+  //console.log(firebaseAuth.currentUser);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  return <AppRouter isLoggedIn={isLoggedIn} />;
 };
 
 export default App;
